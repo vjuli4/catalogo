@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo</title>
+  <meta name="description" content="Escolha seus produtos e envie o pedido pelo WhatsApp.">
+
+  <!-- Fontes do Google (título + texto). Se ficar offline, o navegador usa a fonte padrão. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Todo o visual está neste arquivo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== TOPO ========== -->
+  <header class="topo">
+    <h1>Cuidados &amp; perfumaria</h1>
+    <p>Toque em “Adicionar”, monte seu pedido e envie pelo WhatsApp.</p>
+
+    <!-- Os botões de categoria são criados pelo script.js -->
+    <nav id="filtros" class="filtros" aria-label="Categorias"></nav>
+  </header>
+
+  <!-- ========== LISTA DE PRODUTOS ========== -->
+  <!-- O script.js preenche esta div com um cartão por produto -->
+  <main id="lista" class="grade"></main>
+
+  <!-- ========== BARRA FIXA DO CARRINHO (aparece quando há itens) ========== -->
+  <button id="btn-carrinho" class="barra-carrinho" hidden>
+    <span id="qtd-total">0 itens</span>
+    <span>Ver pedido · <strong id="valor-barra">R$ 0,00</strong></span>
+  </button>
+
+  <!-- ========== GAVETA DO CARRINHO ========== -->
+  <div id="fundo" class="fundo" hidden></div>
+  <aside id="gaveta" class="gaveta" aria-label="Seu pedido" hidden>
+    <div class="gaveta-topo">
+      <h2>Seu pedido</h2>
+      <button id="fechar" class="icone" aria-label="Fechar">✕</button>
+    </div>
+
+    <ul id="itens" class="itens"></ul>
+
+    <div class="gaveta-base">
+      <label for="nome">Seu nome (opcional)</label>
+      <input id="nome" type="text" placeholder="Como posso te chamar?" autocomplete="name">
+
+      <div class="total"><span>Total</span><strong id="valor-total">R$ 0,00</strong></div>
+
+      <button id="enviar" class="btn-zap">Enviar pedido no WhatsApp</button>
+      <button id="limpar" class="btn-link">Esvaziar pedido</button>
+    </div>
+  </aside>
+
+  <!-- Toda a lógica está neste arquivo (carrinho, filtros, WhatsApp) -->
+  <script src="script.js"></script>
+</body>
+</html>
